@@ -29,7 +29,7 @@ const reset = () => {
     player: 0,
     list: [],
   });
-}
+};
 
 module.exports = {
   add,

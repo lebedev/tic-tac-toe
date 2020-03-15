@@ -41,12 +41,12 @@ const saveScore = () => {
     team,
   } = game.get();
   score.add({winner, team});
-}
+};
 
 router.post('/move', (req, res) => Promise.resolve()
   .then(() => game.move(req.body.index))
   .then(win => {
-    logger.debug({win})
+    logger.debug({win});
     if (win)
       saveScore();
     else {

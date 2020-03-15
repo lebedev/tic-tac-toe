@@ -27,4 +27,4 @@ Promise.resolve()
     logger.error(err);
     db().close();
     process.exit(1);
-  })
+  });

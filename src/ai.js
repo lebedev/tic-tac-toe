@@ -11,7 +11,7 @@ const getMove = (board, team) => {
   logger.debug(recommendation);
   let { index } = recommendation;
   return ++index;
-}
+};
 
 module.exports = {
   getMove,

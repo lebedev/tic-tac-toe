@@ -26,19 +26,19 @@ const get = () => {
     [O]: 'O',
     board,
     nextMove,
-  }
-  
+  };
+
   if (!team)
     return result;
 
   result.end = true;
   if (team !== 'draw')
     Object.assign(result, {winner, team});
-  
+
   return result;
 };
 const move = index => {
-  logger.debug({index})
+  logger.debug({index});
   return Game.game.applyMove(index);
 };
 const nextGame = () => {

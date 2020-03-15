@@ -27,6 +27,8 @@ const reset = () => {
   Object.assign(Score, {
     ai: 0,
     player: 0,
+    X: 0,
+    O: 0,
     list: [],
   });
 };

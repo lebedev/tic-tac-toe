@@ -41,16 +41,24 @@ const move = index => {
   logger.debug({index});
   return Game.game.applyMove(index);
 };
+let firstMove;
 const nextGame = () => {
   let {oPlayer, xPlayer} = Game;
   [oPlayer, xPlayer] = [xPlayer, oPlayer];
   Game.reset();
   Object.assign(Game, {oPlayer, xPlayer});
-  if (xPlayer === 'ai')
-    Game.game.applyMove(Math.round(Math.random() * 8) + 1);
+  if (xPlayer === 'ai') {
+    firstMove = Math.round(Math.random() * 8) + 1;
+    Game.game.applyMove(firstMove);
+  }
 };
-const reset = Game.reset.bind(Game);
-
+const reset = () => {
+  const {xPlayer} = Game;
+  Game.reset();
+  if (xPlayer === 'ai') {
+    Game.game.applyMove(firstMove);
+  }
+};
 
 module.exports = {
   get,

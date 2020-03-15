@@ -1,5 +1,6 @@
 const express = require('express');
 const fallback = require('express-history-api-fallback');
+const cors = require('cors');
 
 const config = require('./src/config.js');
 const logger = require('./src/logger.js');
@@ -9,6 +10,7 @@ app.enable('trust proxy');
 app.use(logger.log4js.connectLogger(logger.getLogger('express'), {level: 'auto'}));
 const root = __dirname + config.app.front_path;
 app.use(express.static(root));
+app.use(cors());
 
 if (process.env.PORT)
   config.app.port = process.env.PORT;

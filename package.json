@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && LOGLEVEL=info node .",
+    "start": "cd front && npx yarn && npx yarn build && cd .. && npm install && LOGLEVEL=info node .",
     "dev": "npm install && ./node_modules/.bin/gulp"
   },
   "author": "Kuntsevich Andrei",

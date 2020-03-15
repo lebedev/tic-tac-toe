@@ -1,8 +1,8 @@
 {
   "app": {
-    "name": "Frontend testcase",
+    "name": "Tic-Tac-Toe",
     "port": 3000,
     "loglevel": "debug",
-    "front_path": "/front"
+    "front_path": "/front/build"
   }
 }
